@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../lib/node_modules/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <!-- infrastructure and dependencies -->
+    <script type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="../../lib/node_modules/mocha/mocha.js" ></script>
+    <script type="text/javascript" src="../../lib/node_modules/chai/chai.js" ></script>
+    <script type="text/javascript" src="../../lib/node_modules/q/q.js" ></script>
+    <script type="text/javascript" src="../../lib/breezejs/Scripts/breeze.js" ></script>
+    
+    <!-- setting up mocha and chai -->
+    <script type="text/javascript">
+      mocha.ui('bdd'); 
+      mocha.reporter('html');
+      expect = chai.expect;
+      assert = chai.assert;
+    </script>
+	
+    <!-- include our specifications -->
+    <script type="text/javascript" src="breeze-dependencies.js"></script>
+    <script type="text/javascript" src="TestNetflixClient.js"></script>
+    
+    <!-- run the tests -->
+    <script type="text/javascript">
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
+    </script>
+  </body>
+</html>
